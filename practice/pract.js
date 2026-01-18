@@ -1,10 +1,10 @@
-let a=Number(prompt("enter the value:"));
-let b=Number(prompt("enter the value:"));
+// let a=Number(prompt("enter the value:"));
+// let b=Number(prompt("enter the value:"));
 
-const sum = (a,b)=>{
-   return a+b;
-};
-console.log(sum(a,b));
+// const sum = (a,b)=>{
+//     return a+b;
+// };
+// console.log(sum(a,b));
 
 
 var val="this is vowel testing code";

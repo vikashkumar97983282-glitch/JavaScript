@@ -1,11 +1,11 @@
-console.log("Hello from script.js file!");
-alert("this is an alert from scipt.js file");
+// console.log("Hello from script.js file!");
+// alert("this is an alert from scipt.js file");
 
-console.log(window);
-console.dir(document.body);
-console.dir(document.head); 
-document.body.style.backgroundColor = "green";
-document.body.childNodes[1].innerText = "hello";
+// console.log(window);
+// console.dir(document.body);
+// console.dir(document.head); 
+// document.body.style.backgroundColor = "green";
+// document.body.childNodes[1].innerText = "hello";
 
 
 // dom manipulation
