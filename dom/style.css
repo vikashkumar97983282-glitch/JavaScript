@@ -1,0 +1,24 @@
+h1{
+    color:red
+}
+h4{
+    color:blue;
+
+}
+button{
+    background-color:green;
+    color:white;
+    
+}
+h3{
+    color:green;
+}
+
+#bt{
+    color: rgb(241, 29, 6);
+    background-color: rgb(51, 7, 248);
+    width: 80px;
+    height: 30px;
+    margin-right: 20px;
+    font-size: 15px;
+}
