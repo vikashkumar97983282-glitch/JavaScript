@@ -1,5 +1,6 @@
 const http=require('http');
 const fs = require('fs');
+const { buffer } = require('stream/consumers');
 
 const myserver=http.createServer((req,res)=>{
     console.log(req.url, req.method, req.headers);
@@ -24,9 +25,17 @@ const myserver=http.createServer((req,res)=>{
         return res.end();
     } else if(req.url.toLowerCase() === "/submit-details" && req.method == "POST"){
 
+        const body = []
         req.on('data',chunk=>{
             console.log(chunk);
-        })
+            body.push(chunk);
+        });
+        req.on('end',()=>{
+            const fullBody = Buffer.concat(body).toString();
+            console.log(fullBody);
+        });
+
+
         fs.writeFileSync('user.txt','vikash kumar');
         res.statusCode=302;
         res.setHeader('Location','/');           
