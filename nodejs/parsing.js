@@ -33,6 +33,12 @@ const myserver=http.createServer((req,res)=>{
         req.on('end',()=>{
             const fullBody = Buffer.concat(body).toString();
             console.log(fullBody);
+            const params = new URLSearchParams(fullBody);
+            const bodyObject = {};
+            for (const [key,val] of params.entries()){
+                bodyObject[key] = val;
+            }
+            console.log(bodyObject);
         });
 
 
