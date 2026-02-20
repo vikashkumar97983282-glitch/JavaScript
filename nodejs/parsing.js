@@ -3,7 +3,7 @@ const fs = require('fs');
 const { buffer } = require('stream/consumers');
 
 const myserver=http.createServer((req,res)=>{
-    console.log(req.url, req.method, req.headers);
+    console.log(req.url, req.method);
 
     if (req.url === '/'){
         res.setHeader('Content-Type','text/html');
@@ -34,15 +34,18 @@ const myserver=http.createServer((req,res)=>{
             const fullBody = Buffer.concat(body).toString();
             console.log(fullBody);
             const params = new URLSearchParams(fullBody);
-            const bodyObject = {};
-            for (const [key,val] of params.entries()){
-                bodyObject[key] = val;
-            }
+            // const bodyObject = {};
+            // for (const [key,val] of params.entries()){
+            //     bodyObject[key] = val;
+            // }
+            // in one line these same code
+            const bodyObject = Object.fromEntries(params);
             console.log(bodyObject);
+            fs.writeFileSync('user.txt',JSON.stringify(bodyObject));
         });
 
 
-        fs.writeFileSync('user.txt','vikash kumar');
+        fs.writeFileSync('user.txt', '/');
         res.statusCode=302;
         res.setHeader('Location','/');           
     }
